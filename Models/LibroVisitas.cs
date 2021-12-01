@@ -16,5 +16,13 @@ namespace Practica4.Models
             archivo.Close();
 
         }
+
+        public string Leer()
+        {
+            StreamReader archivo = new StreamReader(HostingEnvironment.MapPath("~") + "/App_Data/datos.txt");
+            string todo = archivo.ReadToEnd();
+            archivo.Close();
+            return todo;
+        }
     }
 }
